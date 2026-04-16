@@ -17,7 +17,7 @@ def power_off():
     print("전원 종료를 시작합니다..")
     print("운영체제를 확인합니다...")
     # 현재 운영체제 확인 (Windows, Linux 등)
-    system_os = platform.system()
+    system_os = platform.system()                        
     print(f"운영체제: {system_os}")
     try:
         if system_os == "Windows":

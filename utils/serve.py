@@ -14,9 +14,11 @@ def index():
 
 @app.route('/poweroffapi/')
 def power_off():
+    print("전원 종료를 시작합니다..")
+    print("운영체제를 확인합니다...")
     # 현재 운영체제 확인 (Windows, Linux 등)
     system_os = platform.system()
-    
+    print(f"운영체제: {system_os}")
     try:
         if system_os == "Windows":
             # 윈도우 종료 명령어 (/s: 종료, /t 0: 0초 후 실행)
@@ -30,7 +32,6 @@ def power_off():
         return "시스템을 종료합니다...", 200
     except Exception as e:
         return f"오류 발생: {str(e)}", 500
-
 @app.route('/<path:filename>')
 def serve_static(filename):
     # 정적 파일 서빙
